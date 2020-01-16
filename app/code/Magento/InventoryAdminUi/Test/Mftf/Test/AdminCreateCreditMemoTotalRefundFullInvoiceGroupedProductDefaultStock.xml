@@ -91,6 +91,8 @@
         <click selector="{{AdminOrderDetailsMainActionsSection.creditMemo}}" stepKey="clickCreditMemo"/>
         <click selector="{{AdminCreditMemoItemsSection.itemReturnToStock('1')}}" stepKey="checkReturnToStock"/>
         <click selector="{{AdminCreditMemoTotalSection.submitRefundOffline}}" stepKey="clickSubmit"/>
+        <waitForElementVisible time='60' selector="{{AdminMessagesSection.success}}" stepKey="waitForMessageAppears"/>
+        <see selector="{{AdminMessagesSection.success}}" userInput="You created the credit memo." stepKey="seeCreditMemoCreateSuccess"/>
         <!--Admin Area Check quantities after Credit Memo-->
         <amOnPage url="{{AdminProductIndexPage.url}}" stepKey="navigateToProductIndexPageForCheckProductQtyAfterCreditMemo"/>
         <actionGroup ref="AdminGridFilterSearchResultsByInput" stepKey="findProductBySkuToCheckQtyAfterCreditMemo">
